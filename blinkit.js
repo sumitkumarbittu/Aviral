@@ -16,7 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const validPassword = "123";
   
     if (email === validEmail && password === validPassword) {
-      window.location.href = "http://127.0.0.1:5500/blinkit/blinkit.html"; // Redirect to your e-commerce website
+      window.location.href = "https://ambhijoshi.github.io/Aviral2/"; // Redirect to your e-commerce website
     } else {
       errorMessage.textContent = "Invalid email or password.";
     }
@@ -43,7 +43,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   
     // Dummy registration (replace with actual server-side logic)
     // You can also add validation for email format here if needed
-    window.location.href = "http://127.0.0.1:5500/blinkit/blinkit.html"; // Redirect after successful registration
+    window.location.href = "https://ambhijoshi.github.io/Aviral2/"; // Redirect after successful registration
   });
   
   // Show Create Account Form
