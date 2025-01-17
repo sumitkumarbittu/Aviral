@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natutres Basket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header>
+        
+        <div class="header-container">
+                <div class="text-content">
+                    <h1 class="main-title">Nature's Basket</h1>
+                    <h2 class="subtitle">Bringing Nature's Best To Your Door</h2>
+                </div>
+            </div>
+        </div>
+        <div class="logo-container">
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZZ4G7tNrfvy7UWcZNsniffP83HvZc2IiO1w&s"; alt="Nature's Basket Logo">
+        </div>
+        
+                <nav>
+            <ul>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="account-button-container">
+            <button class="account-button" onclick="openAccountModal()">My Account</button>
+        </div>
+    </main>
+
+    <!-- Account Details Modal -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAccountModal()">&times;</span>
+            <h2>My Account</h2>
+            <p><strong>Name:</strong> Aviral </p>
+            <p><strong>Email:</strong> user@example.com</p>
+            <p><strong>Address:</strong> 123, MG Road, Bangalore, India</p>
+            <h3>Your Orders:</h3>
+            <ul></ul><!-- Orders will be added dynamically-->
+        </div>
+    </div>
+    <section id="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-container">
+            <div class="category" onclick="filterByCategory('fruits')">Fruits & Vegetables</div>
+            <div class="category" onclick="filterByCategory('dairy')">Dairy Products</div>
+            <div class="category" onclick="filterByCategory('spices')">Spices</div>
+            <div class="category" onclick="filterByCategory('snacks')">Snacks</div>
+            <div class="category" onclick="filterByCategory('grains')">Grains</div>
+            <div class="category" onclick="filterByCategory('all')">All Products</div>
+        </div>
+    </section>
+    
+    <section id="products">
+        <h2>Products</h2>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for products..." oninput="searchProducts()">
+        </div>
+        <div class="product-container" id="productContainer">
+            <div class="product" data-category="grains">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR7l0AAxIlzDn5YfuW4uv79VZ1jCDgRkkQ5tfRJjpBtG2bRXKJg_XA2eHTlvn1uSLOsz5WjRU5NWyFFEna4wb3VUYNLKx6h5htzUelLrLEER65sqRjCF55D&usqp=CAE" alt=" Basmati Rice (10kg)">
+                <h3>Basmati Rice (10kg)</h3>
+                <p>₹500</p>
+                <button onclick="addToCart('Rice', 500)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="grains">
+                <img src="https://cdn.zeptonow.com/production///tr:w-640,ar-1000-1000,pr-true,f-auto,q-80/cms/product_variant/ff35d221-d743-4c8b-bcac-d8108d145910.jpeg" alt="Aashirwaad Aata (10kg)">
+                <h3>Aashirwaad Aata (10kg)</h3>
+                <p>₹400</p>
+                <button onclick="addToCart('Wheat Flour', 400)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="dairy">
+                <img src="https://amul.com/files/products/amul-gold.png" alt=" Amul Milk (1L)">
+                <h3>Amul Milk (1L)</h3>
+                <p>₹68</p>
+                <button onclick="addToCart('Milk', 68)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="fruits">
+                <img src="https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=" alt="Apples (1kg)">
+                <h3>Apples (1kg)</h3>
+                <p>₹150</p>
+                <button onclick="addToCart('Apples', 150)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="dairy">
+                <img src="https://www.bigbasket.com/media/uploads/p/xl/104864_8-amul-butter-pasteurised.jpg" alt="Amul Butter(500g)">
+                <h3> Amul Butter (500g)</h3>
+                <p>₹250</p>
+                <button onclick="addToCart('Amul Butter', 250)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="grains">
+                <img src="https://www.jiomart.com/images/product/original/490155010/loose-moong-dal-1-kg-product-images-o490155010-p490155010-0-202203171137.jpg?im=Resize=(420,420)" alt="Moong Dal (1kg)">
+                <h3>Moong Dal (1kg)</h3>
+                <p>₹170</p>
+                <button onclick="addToCart('Moong Dal', 170)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="fruits">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/11/YS/QV/LN/129516967/banana-500x500.jpg" alt="Banana (1dozen)">
+                <h3>Banana(1dozen)</h3>
+                <p>₹50</p>
+                <button onclick="addToCart('banana', 50)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="fruits">
+                <img src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP-1200-80.jpg" alt="potatao (1kg)">
+                <h3>potato (1kg)</h3>
+                <p>₹30</p>
+                <button onclick="addToCart('potato', 30)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="fruits">
+                <img src="https://www.jiomart.com/images/product/original/590001744/onion-5-kg-pack-product-images-o590001744-p590001744-1-202410141659.jpg?im=Resize=(420,420)" alt="onion (1kg)">
+                <h3>Onions (1kg)</h3>
+                <p>₹60</p>
+                <button onclick="addToCart('onion', 60)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="grains">
+                <img src="https://d1ixo36kppfedg.cloudfront.net/faceview/ae/ca/b7a/ai/imgs/pd/1585806818654_1.jpeg" alt="Toor Dal (1kg)">
+                <h3>Toor Dal (1kg)</h3>
+                <p>₹180</p>
+                <button onclick="addToCart('Toor Dal', 180)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="snacks">
+                <img src="https://m.media-amazon.com/images/I/71xm+KuHAsL._AC_UF1000,1000_QL80_.jpg" alt="Navratan (200 g)">
+                <h3>Navratan(200 g)</h3>
+                <p>₹47</p>
+                <button onclick="addToCart('Navratan', 47)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="snacks">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxuqxOTM5WtSL81PLhrY22-4hrahr_kjH3ha3fAmo5voadBKn32OmQOrMgdO5QUFTgAOVz791HrfADcafslOyFGHx7YtDzqJ6pdpD2kbHqA46lnmNNVQP5XQ&usqp=CAE" alt="Parle G Gold(500 g)">
+                <h3>Parle G Gold (500 g)</h3>
+                <p>₹69</p>
+                <button onclick="addToCart('Parle G Gold', 69)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="fruits">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yhzz_SobhF0YnjnnuhJyCQPWNoYRpWYIcQ&s" alt="Tomato (1kg)">
+                <h3>Tomatao (1kg)</h3>
+                <p>₹40</p>
+                <button onclick="addToCart('Tomatao', 40)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="spices">
+                <img src="https://m.media-amazon.com/images/I/614mm2hYHyL._AC_UF1000,1000_QL80_.jpg" alt="Tata Salt (1kg)">
+                <h3>Tata Salt (1kg)</h3>
+                <p>₹20</p>
+                <button onclick="addToCart('Tata Salt', 20)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="spices">
+                <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/15065/conversions/fa246ce0-054b-4892-bf30-5eb43cd938aa-thumb.jpg" alt="Turmeric (200 g)">
+                <h3>Turmeric powder(200 g) </h3>
+                <p>₹55</p>
+                <button onclick="addToCart('Turmeric powder', 55)">Add to Cart</button>
+            </div>
+            <div class="product" data-category="spices">
+                <img src="https://m.media-amazon.com/images/I/712h1l0amfL._AC_UF1000,1000_QL80_.jpg" alt="Red Chilli Powder (200 g)">
+                <h3> Red Chilli Powder (200 g)</h3>
+                <p>₹90</p>
+                <button onclick="addToCart('Red Chilli Powder', 90)">Add to Cart</button>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <h3 id="totalAmount">Total: ₹0</h3>
+        <button id="checkoutBtn" onclick="checkout()">Checkout</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 Natures Basket</p>
+    </footer>
+    <script src="script.js"></script>
+
+    <img src="project-folder/
+         rice.jpg
+         wheat.jpg
+         milk.jpg
+         apples.jpg
+    " alt="">
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="blinkit1.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="create-account">
+      Don't have an account? <a href="javascript:void(0);" onclick="showCreateAccountForm()">Create one</a>
+    </p>
+
+    <div id="create-account-form" style="display:none;">
+      <h3>Create New Account</h3>
+      <form id="createForm">
+        <label for="new-email">Email:</label>
+        <input type="email" id="new-email" name="new-email" required>
+
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" name="new-password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit">Create Account</button>
+      </form>
+      <button onclick="hideCreateAccountForm()">Cancel</button>
+    </div>
+
+    <div id="error-message"></div>
+  </div>
+
+  <script src="blinkit.js"></script>
+</body>
+</html>
