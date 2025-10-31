@@ -16,7 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const validPassword = "123";
   
     if (email === validEmail && password === validPassword) {
-      window.location.href = "https://sumitkumarbittu.github.io/Aviral2/"; // Redirect to your e-commerce website
+      window.location.href = "index1.html"; // Redirect to your e-commerce website
     } else {
       errorMessage.textContent = "Invalid email or password.";
     }
